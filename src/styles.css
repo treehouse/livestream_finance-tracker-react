@@ -1,0 +1,199 @@
+/* Light Theme */
+:root {
+    --bg-color: #FFFAF0; /* Light yellow background */
+    --text-color: #333; /* Dark text color */
+    --primary-color: #FF6347; /* Red color */
+    --secondary-color: #FFD700; /* Yellow color */
+    --card-bg: #FFFFFF; /* White card background */
+    --card-shadow: rgba(0, 0, 0, 0.1); /* Light shadow for cards */
+    --input-bg: #FFFFFF; /* White input background */
+    --input-border: #DCDCDC; /* Light border for inputs */
+    --income-color: #32CD32; /* Lime green for income */
+    --expenses-color: #DC143C; /* Crimson for expenses */
+    --balance-color: #FF6347; /* Red for balance */
+  }
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    --bg-color: #2F4F4F; /* Dark slate gray background */
+    --text-color: #F5F5F5; /* Light text color */
+    --primary-color: #FF6347; /* Red color */
+    --secondary-color: #FFD700; /* Yellow color */
+    --card-bg: #1C1C1C; /* Very dark gray card background */
+    --card-shadow: rgba(0, 0, 0, 0.5); /* Dark shadow for cards */
+    --input-bg: #333; /* Dark input background */
+    --input-border: #555; /* Dark border for inputs */
+    --income-color: #32CD32; /* Lime green for income */
+    --expenses-color: #DC143C; /* Crimson for expenses */
+    --balance-color: #FF6347; /* Red for balance */
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  .theme-toggle {
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    background-color: var(--primary-color);
+  }
+  
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--primary-color);
+  }
+  
+  .card p {
+    font-size: 2em;
+    margin: 10px 0 0;
+  }
+  
+  .income-card {
+    border-left: 5px solid var(--income-color);
+  }
+  
+  .expenses-card {
+    border-left: 5px solid var(--expenses-color);
+  }
+  
+  .balance-card {
+    border-left: 5px solid var(--balance-color);
+  }
+  
+  .transaction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  
+  button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #FF4500; /* Darker red */
+  }
+  
+  .transaction-list {
+    margin: 20px 0;
+  }
+  
+  .transaction-list h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .transaction-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transaction-list th, .transaction-list td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--input-border);
+  }
+  
+  .transaction-list th {
+    background-color: var(--card-bg);
+  }
+  
+  .transaction-list td {
+    background-color: var(--bg-color);
+  }
+  
+  .transaction-list tr:hover td {
+    background-color: var(--input-bg);
+  }
